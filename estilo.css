@@ -18,7 +18,7 @@
 --ancho_maximo: 1200px;
 --padding_izquierda_derecha: 20px;
 --padding_arriba_y_abajo: 100px;
---altura_header: 80px;
+--altura_header: 60px;
 
 /* ---- TAMAÑO DE FUENTES ---- */
 --titulo_h1: clamp(1rem, 7vw, 2.6rem);   /*clamp es una funcion que me permite establecer un rango de valores 
@@ -48,7 +48,7 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     min-height: 100%;
-    /* background-color: var(--color_negro); */
+    background-color: var(--color_negro);
 }
 
 /* ----- ESTILOS COMPARTIDOS ----- */
@@ -92,13 +92,19 @@ header {
     width: 100%;
 }
 .barra_navegacion {
-    background-color: #af005b;
+    /* background-color: #af005b; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;  /*para que se posicione abajo en el nav*/
     width: min(100%, var(--ancho_maximo));
-    padding: 10px var(--padding_izquierda_derecha);
+    padding: 0 var(--padding_izquierda_derecha); /*10px tenia antes*/
+    height: var(--altura_header);
+}
+
+.barra_navegacion h1{
+    font-size: var(--titulo_h1);
+    color: var(--color_primario);
 }
 .icono_hamburguesa {
     display: none;
@@ -113,7 +119,7 @@ header {
     color: var(--color_blanco);
     position: fixed;
     z-index: 10;
-    top: 4px;
+    top: 5px;
     right: 20px;
 }
 
@@ -140,3 +146,51 @@ header {
     font-size: 2.2rem;
     font-weight: bold;
 }
+
+/* ----- ESTILOS ESCRITORIO ----- */
+@media (min-width: 600px) { 
+    /* --- NAV --- */
+    .barra_navegacion {
+        /* background-color: #af005b; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;  /*para que se posicione abajo en el nav*/
+    }
+    .barra_navegacion h1{
+    font-size: var(--titulo_h1);
+    }
+
+    .icono_hamburguesa {
+        display: none;
+    }
+        
+    .icon_burger{
+       display: none;
+    }
+    
+    .ul_links_nav{
+        background-color: rgba(0, 0, 0, 0.579);
+        width: 100%; /*para que se posicione abajo en el nav*/
+    
+        position: fixed; /*fija el menu arriba*/
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transition: height .4s ease; /*se baja el menu*/
+        
+    }
+    .link_nav {
+        color: var(--color_blanco);
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+}
+
