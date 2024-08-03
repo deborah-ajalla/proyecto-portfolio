@@ -52,7 +52,7 @@ body {
 }
 
 /* ----- ESTILOS COMPARTIDOS ----- */
-.titulo_h1 {
+/* .titulo_h1 {
     font-size: var(--titulo_h1);
     color: var(--color_primario);
 }
@@ -67,14 +67,19 @@ body {
 .titulos_h3{
     color: var(--color_blanco);
     font-size: clamp(1rem, 4vw, 1.5rem);
-}
+} */
 
 .estilo_secciones_globales{
     margin: 0 auto;
     width: min(100%, var(--ancho_maximo));
     padding: var(--padding_arriba_y_abajo) var(--padding_izquierda_derecha);
 }
-
+.titulos_secciones{
+    font-size: var(--titulo_h2);
+    color: var(--color_primario);
+    text-align: center;
+    margin-bottom: 30px;
+}
 /* ----- ESTILOS HEADER ----- */
 header {
     height: var(--altura_header);
@@ -97,7 +102,9 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;  /*para que se posicione abajo en el nav*/
-    width: min(100%, var(--ancho_maximo));
+    width: 100%;
+    max-width:  var(--ancho_maximo);
+    margin: 0 auto;
     padding: 0 var(--padding_izquierda_derecha); /*10px tenia antes*/
     height: var(--altura_header);
 }
@@ -124,7 +131,7 @@ header {
 }
 
 .ul_links_nav{
-    background-color: rgba(0, 0, 0, 0.579);
+    background-color: rgba(0, 0, 0, 0.934);
     width: 100%; /*para que se posicione abajo en el nav*/
 
     position: fixed; /*fija el menu arriba*/
@@ -147,18 +154,84 @@ header {
     font-weight: bold;
 }
 
+/* ----- ESTILOS SECCION PPAL ----- */
+.seccion_ppal_article{
+    text-align: center;
+
+}
+.seccion_ppal_h2{
+    color: var(--color_primario);
+    font-size: var(--titulo_h2);
+
+}
+.seccion_ppal_h3{
+    font-size: var(--subtitulo_seccion_ppal);
+    color: var(--color_blanco);
+
+}
+.seccion_ppal_p{
+    font-size: var(--parrafo_seccion_ppal);
+    color: var(--color_blanco);
+    margin: 15px 0;
+
+}
+.btn_contenedor{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    transition: 0.2s;
+}
+.boton{
+    background-color: var(--color_primario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: var(--color_negro);
+    border-radius: 10px;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: var(--color_secundario);
+    color: var(--color_primario);
+}
+
+.img_ppal{
+    width: 100%;
+    display: none;
+}
+
+/* ----- SECCION SOBRE MI ----- */
+.seccion_sobre_mi {
+    background-color: var(--color_secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parrafo_sobre_mi{
+    color: var(--color_blanco);
+    text-align: center;
+    margin-bottom: 30px
+}
+.imagem_sobre_mi{
+    width: 100%;
+    max-width: 350px;
+}
+/* -------------------------------- */
+
 /* ----- ESTILOS ESCRITORIO ----- */
-@media (min-width: 600px) { 
+@media (min-width: 768px) { 
     /* --- NAV --- */
     .barra_navegacion {
-        /* background-color: #af005b; */
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;  /*para que se posicione abajo en el nav*/
     }
     .barra_navegacion h1{
     font-size: var(--titulo_h1);
+    /* padding: var(--padding_izquierda_derecha); */
     }
 
     .icono_hamburguesa {
@@ -170,27 +243,63 @@ header {
     }
     
     .ul_links_nav{
-        background-color: rgba(0, 0, 0, 0.579);
-        width: 100%; /*para que se posicione abajo en el nav*/
-    
-        position: fixed; /*fija el menu arriba*/
-        width: 100%;
-        left: 0;
-        top: 0;
-        height: 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        transition: height .4s ease; /*se baja el menu*/
+        background-color: transparent;
+        width: auto;
+        height: auto;  
+        position: static; 
         
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
     }
     .link_nav {
         color: var(--color_blanco);
-        font-size: 2.2rem;
+        font-size: 1.2rem;
         font-weight: bold;
     }
+
+    /* --- SECCION PPAL --- */
+    .seccion_ppal{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .seccion_ppal_article{
+        text-align: initial;
+        width: 57%;
+    }
+
+    .btn_contenedor{
+        display: flex;
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .boton{
+        font-size: 1.4rem;
+        padding: 10px 15px;
+        color: var(--color_negro);
+    }
+
+    .img_ppal{
+        width: 40%;
+        display: block;
+        max-width: 340px;
+        max-height: 310px;
+        object-fit: cover;
+        /* object-position: right; */
+    }
+    /* --- SECCION SOBRE MI --- */
+    .seccion_sobre_mi {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+    .article_sobre_mi{
+        height: 100%;
+    }
+    
+
+
 }
 
