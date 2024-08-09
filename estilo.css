@@ -18,7 +18,7 @@
 --ancho_maximo: 1200px;
 --padding_izquierda_derecha: 20px;
 --padding_arriba_y_abajo: 100px;
---altura_header: 80px;
+--altura_header: 60px;
 
 /* ---- TAMAÑO DE FUENTES ---- */
 --titulo_h1: clamp(1rem, 7vw, 2.6rem);   /*clamp es una funcion que me permite establecer un rango de valores 
@@ -48,11 +48,11 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     min-height: 100%;
-    /* background-color: var(--color_negro); */
+    background-color: var(--color_negro);
 }
 
 /* ----- ESTILOS COMPARTIDOS ----- */
-.titulo_h1 {
+/* .titulo_h1 {
     font-size: var(--titulo_h1);
     color: var(--color_primario);
 }
@@ -67,14 +67,24 @@ body {
 .titulos_h3{
     color: var(--color_blanco);
     font-size: clamp(1rem, 4vw, 1.5rem);
-}
+} */
 
 .estilo_secciones_globales{
     margin: 0 auto;
     width: min(100%, var(--ancho_maximo));
     padding: var(--padding_arriba_y_abajo) var(--padding_izquierda_derecha);
 }
+.titulos_secciones{
+    font-size: var(--titulo_h2);
+    color: var(--color_primario);
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+.titulos_h3{
+    color: var(--color_blanco);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
 /* ----- ESTILOS HEADER ----- */
 header {
     height: var(--altura_header);
@@ -92,13 +102,21 @@ header {
     width: 100%;
 }
 .barra_navegacion {
-    background-color: #af005b;
+    /* background-color: #af005b; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;  /*para que se posicione abajo en el nav*/
-    width: min(100%, var(--ancho_maximo));
-    padding: 10px var(--padding_izquierda_derecha);
+    width: 100%;
+    max-width:  var(--ancho_maximo);
+    margin: 0 auto;
+    padding: 0 var(--padding_izquierda_derecha); /*10px tenia antes*/
+    height: var(--altura_header);
+}
+
+.barra_navegacion h1{
+    font-size: var(--titulo_h1);
+    color: var(--color_primario);
 }
 .icono_hamburguesa {
     display: none;
@@ -113,12 +131,12 @@ header {
     color: var(--color_blanco);
     position: fixed;
     z-index: 10;
-    top: 4px;
+    top: 5px;
     right: 20px;
 }
 
 .ul_links_nav{
-    background-color: rgba(0, 0, 0, 0.579);
+    background-color: rgba(0, 0, 0, 0.934);
     width: 100%; /*para que se posicione abajo en el nav*/
 
     position: fixed; /*fija el menu arriba*/
@@ -140,3 +158,233 @@ header {
     font-size: 2.2rem;
     font-weight: bold;
 }
+
+/* ----- ESTILOS SECCION PPAL ----- */
+.seccion_ppal_article{
+    text-align: center;
+    padding: 0 10px;
+}
+.seccion_ppal_h2{
+    color: var(--color_primario);
+    font-size: var(--titulo_h2);
+
+}
+.seccion_ppal_h3{
+    font-size: var(--subtitulo_seccion_ppal);
+    color: var(--color_blanco);
+
+}
+.seccion_ppal_p{
+    font-size: var(--parrafo_seccion_ppal);
+    color: var(--color_blanco);
+    margin: 15px 0;
+    /* max-width: 500px; */
+}
+.btn_contenedor{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    transition: 0.2s;
+}
+.boton{
+    background-color: var(--color_primario);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: var(--color_negro);
+    border-radius: 10px;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: var(--color_secundario);
+    color: var(--color_primario);
+}
+
+.img_ppal{
+    width: 100%;
+    display: none;
+}
+
+/* ----- SECCION SOBRE MI ----- */
+.seccion_sobre_mi {
+    background-color: var(--color_secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parrafo_sobre_mi{
+    color: var(--color_blanco);
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+.imagem_sobre_mi{
+    width: 100%;
+    max-width: 350px;
+}
+
+/* ----- SECCION HABILIDADES ----- */
+.contenedor_habilidad{
+    background-color: var(--color_secundario);
+    padding: 30px 0;
+}
+
+.contenedor_habilidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+.icono_habilidades{
+    width: 45%;
+    max-width: 350px;
+    border-radius: 50%;
+}
+
+/* ----- SECCION PROYECTOS ----- */
+.contenedor_proyectos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+} 
+.contenedor_proyecto{
+    background-color: var(--color_secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor_proyecto p{
+    color: var(--color_blanco);
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.imagen_proyectos{
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 0;
+    border-radius: 30px;
+}
+/* -------------------------------- */
+
+/* ----- ESTILOS ESCRITORIO ----- */
+@media (min-width: 768px) { 
+    /* --- NAV --- */
+    .barra_navegacion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .barra_navegacion h1{
+    font-size: var(--titulo_h1);
+    /* padding: var(--padding_izquierda_derecha); */
+    }
+
+    .icono_hamburguesa {
+        display: none;
+    }
+        
+    .icon_burger{
+       display: none;
+    }
+    
+    .ul_links_nav{
+        background-color: transparent;
+        width: auto;
+        height: auto;  
+        position: static; 
+        
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .link_nav {
+        color: var(--color_blanco);
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* --- SECCION PPAL --- */
+    .seccion_ppal{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .seccion_ppal_article{
+        text-align: initial;
+        width: 57%;
+    }
+
+    .btn_contenedor{
+        display: flex;
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .boton{
+        font-size: 1.4rem;
+        padding: 10px 15px;
+        color: var(--color_negro);
+    }
+
+    .img_ppal{
+        width: 40%;
+        display: block;
+        max-width: 340px;
+        max-height: 310px;
+        object-fit: cover;
+        /* object-position: right; */
+    }
+    /* --- SECCION SOBRE MI --- */
+    .seccion_sobre_mi {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+
+    .article_sobre_mi{
+        height: 100%;
+    }
+
+    .parrafo_sobre_mi{
+        max-width: 550px;
+    }
+    /* --- SECCION HABILIDADES --- */
+    .contenedor_habilidad{
+        height: 250px;
+    }
+
+    .contenedor_habilidades{
+        flex-direction: row;
+        gap: 35px;
+    }
+        
+    /* --- SECCION PROYECTOS --- */
+    .contenedor_proyectos{
+        flex-direction: row;
+        justify-content: space-evenly;
+    } 
+   
+    .contenedor_proyecto p{
+        max-width: 450px; 
+    }
+
+
+    
+        
+
+
+}
+
