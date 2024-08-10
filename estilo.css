@@ -118,6 +118,7 @@ header {
     font-size: var(--titulo_h1);
     color: var(--color_primario);
 }
+
 .icono_hamburguesa {
     display: none;
 }
@@ -172,7 +173,6 @@ header {
 .seccion_ppal_h3{
     font-size: var(--subtitulo_seccion_ppal);
     color: var(--color_blanco);
-
 }
 .seccion_ppal_p{
     font-size: var(--parrafo_seccion_ppal);
